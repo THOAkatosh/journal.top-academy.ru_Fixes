@@ -1,4 +1,4 @@
-# journal.top-academy_Fixes
+# journal.top-academy.ru_Fixes
 Fixes various dog decisions made by devs of this shit ass site.
 
 I use  [`User JavaScript and CSS`](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld) to upload [`styles.css`](styles.css) and [`scripts.js`](scripts.js) to site. You can use whatever you want, but work is not guaranteed.
