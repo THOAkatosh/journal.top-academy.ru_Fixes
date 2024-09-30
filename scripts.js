@@ -104,7 +104,7 @@
             console.log("hwFix() - Not a homework page, not starting...")
         }
     }
-    window.navigation.addEventListener("navigate", (event) => {
+    window.navigation.addEventListener("navigate", () => {
         hwFix();
     });
 
