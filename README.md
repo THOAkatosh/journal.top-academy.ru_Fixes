@@ -5,4 +5,6 @@ File [`styles.css`](styles.css) is meant to be used with [`Stylus`](https://chro
 
 File [`scripts.js`](styles.css) is meant to be used with [`Tampermonkey`](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo).
 
+![dolbit](https://i.imgur.com/olmHX1r.gif)
+
 You can use these files as you want, I dont care. 
