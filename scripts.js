@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      v2
 // @description  kys journal dev <3
-// @author       Akakish
+// @author       THOAkatosh
 // @match        https://journal.top-academy.ru/ru/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=top-academy.ru
 // @grant        none
