@@ -39,10 +39,13 @@ function sortByDate() {
 	if (document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
 	    var barabama = [];
 	    var doglet = document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > div");
-	    var sons = doglet.querySelectorAll(".homework-item");
-	    sons.forEach(element => {
-	        let data = element.innerText.split("\n")[4].split(".");
-	        barabama.push({date: new Date(`${data[2]}-${data[1]}-${data[0]}`), selector: element});
+        var sons = doglet.querySelectorAll(".homework-item");
+	    sons.forEach(son => {
+            let dogs = son.querySelectorAll(".item-footer")
+            dogs.forEach(dog => {
+                let data = dog.innerText.split("\n")[2].split(".");
+                barabama.push({date: new Date(`${data[2]}-${data[1]}-${data[0]}`), selector: son});
+            });
 	    });
 	    barabama.sort((a, b) => a.date - b.date);
 	    let x = 0;
