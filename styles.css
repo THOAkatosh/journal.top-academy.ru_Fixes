@@ -170,26 +170,26 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
     max-width: unset !important;
 }
 
-.homeworks-section .items-homework {
-    flex-direction: column-reverse;
-}
-
+/* expired */
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 ng-component > div > div.items-homework > hw-item:nth-child(1) {
+    order: 1 !important;
+}
+
+/* current */
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
+ng-component > div > div.items-homework > hw-item:nth-child(4) {
     order: 2 !important;
 }
 
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
-ng-component > div > div.items-homework > hw-item:nth-child(2) {
-    order: 1 !important;
-}
-
+/* on verification */
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 ng-component > div > div.items-homework > hw-item:nth-child(3) {
-    order: 0 !important;
+    order: 3 !important;
 }
 
+/* verificated */
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
-ng-component > div > div.items-homework > hw-item:nth-child(4) {
-    order: 1 !important;
+ng-component > div > div.items-homework > hw-item:nth-child(2) {
+    order: 4 !important;
 }
