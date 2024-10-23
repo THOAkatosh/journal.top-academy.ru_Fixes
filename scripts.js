@@ -24,7 +24,6 @@ function nameFix() {
         }
     }
 }
-setInterval(nameFix, 300);
 
 // revealing all current homework by pressing "show more"
 function revealHW() {
@@ -32,18 +31,17 @@ function revealHW() {
         document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)").querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > p.text-center > span").click();
     }
 }
-setInterval(revealHW, 500);
 
 // sort by exp. date function, then call a function
 function sortByDate() {
 	if (document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
 	    var barabama = [];
 	    var doglet = document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > div");
-        var sons = doglet.querySelectorAll(".homework-item");
+        let sons = doglet.querySelectorAll(".homework-item");
 	    sons.forEach(son => {
             let dogs = son.querySelectorAll(".item-footer")
-            dogs.forEach(dog => {
-                let data = dog.innerText.split("\n")[2].split(".");
+            dogs.forEach(element => {
+                let data = element.innerText.split("\n")[2].split(".");
                 barabama.push({date: new Date(`${data[2]}-${data[1]}-${data[0]}`), selector: son});
             });
 	    });
@@ -55,7 +53,72 @@ function sortByDate() {
 	    });
 	}
 } 
-setInterval(sortByDate, 1500);
+
+// custom css for login page
+function addCustomCSS() {
+    if (document.URL == "https://journal.top-academy.ru/ru/auth/login/index") {
+	    const style = document.createElement('style');
+	    style.type = 'text/css';
+	
+	    const cssCode = `
+	    body {
+	        background: linear-gradient(60deg, 
+	            hsl(255deg 58% 66%) 0%, 
+	            hsl(205deg 90% 61%) 20%, 
+	            hsl(191deg 78% 63%) 40%, 
+	            hsl(175deg 63% 67%) 60%, 
+	            hsl(153deg 63% 68%) 80%, 
+	            hsl(104deg 56% 69%) 100%);
+	        background-size: 500% 500%;  
+	        animation: gradient 15s ease infinite;
+	    }
+	
+	    @keyframes gradient {
+	        0% { background-position: 0% 50% }
+	        50% { background-position: 100% 50% }
+	        100% { background-position: 0% 50% }
+	    }
+	
+	    #cover-caption > div > div > div {
+	        background: white;
+	        border-top: 15px solid #d91842;
+	        border-right: 15px solid #d91842;
+	        border-radius: 5px 20px 5px 20px;
+	        filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.6)); 
+	    }
+	
+	    .auth-decoration {
+	        border: unset;
+	    }
+	
+	    #cover-caption > h1 {
+	        --border-thc: 7px;
+	        --border-col: #d91842;
+	        margin: 0px 0px 20px 0px !important;
+	        color: white;
+	        font-family: var(--aka-text-font);
+	        font-size: 4rem;
+	        font-weight: bolder;
+	        letter-spacing: 14px;
+	        text-shadow: 
+	            var(--border-thc) 0 var(--border-col), 
+	            calc(var(--border-thc) * -1) 0 var(--border-col), 
+	            0 var(--border-thc) var(--border-col), 
+	            0 calc(var(--border-thc) * -1) var(--border-col);
+	        filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.6)); 
+	    }`;
+	
+	    style.appendChild(document.createTextNode(cssCode));
+	
+	    document.head.appendChild(style);
+    }
+} 
+
+// shit code, don't care
+setInterval(nameFix, 350);
+setInterval(revealHW, 350);
+setInterval(sortByDate, 350);
+setInterval(addCustomCSS, 350);
 
 // function hwFix() {
 //     if (document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
