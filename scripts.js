@@ -27,14 +27,18 @@ function nameFix() {
 
 // revealing all current homework by pressing "show more"
 function revealHW() {
-    if (document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index" && document.body.contains(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"))) {
-        document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)").querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > p.text-center > span").click();
+	if (document.URL.startsWith("https://journal.top-academy.ru/ru/main/homework/page/index") ||
+    document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
+	    if(document.body.contains(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"))) {
+	        document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)").querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > p.text-center > span").click();
+	    }
     }
 }
 
 // sort by exp. date function, then call a function
 function sortByDate() {
-	if (document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
+	if (document.URL.startsWith("https://journal.top-academy.ru/ru/main/homework/page/index") ||
+	document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
 	    var barabama = [];
 	    var doglet = document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > div");
         let sons = doglet.querySelectorAll(".homework-item");
@@ -51,12 +55,13 @@ function sortByDate() {
 	        element.selector.style.order = x;
 	        x++;
 	    });
-	}
+	} 
 } 
 
 // custom css for login page
 function addCustomCSS() {
-    if (document.URL == "https://journal.top-academy.ru/ru/auth/login/index") {
+    if (document.URL.startsWith("https://journal.top-academy.ru/ru/auth/login/index") ||
+    document.URL == "https://journal.top-academy.ru/ru/auth/login/index") {
 	    const style = document.createElement('style');
 	    style.type = 'text/css';
 	
@@ -119,53 +124,3 @@ setInterval(nameFix, 350);
 setInterval(revealHW, 350);
 setInterval(sortByDate, 350);
 setInterval(addCustomCSS, 350);
-
-// function hwFix() {
-//     if (document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
-//     	setInterval(sortByDate, 2500);
-    	
-//     	//done in styles.css
-//         setTimeout(function(){
-//             var dogs = [
-//                 ["0", "body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(1)"],
-//                 ["3", "body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(2)"],
-//                 ["2", "body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(3)"],
-//                 ["1", "body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"]
-//             ];
-//             dogs.forEach(element => { document.querySelector(element[1]).style.order = element[0] });
-//         }, 1500);
-        
-//         // useless sort button
-//         setTimeout(function(){
-//             var nawRow = document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.homeworks-navigation.row")
-//             nawRow.style.justifyContent = "flex-end";
-//             var updateButt = document.createElement("button")
-//             updateButt.innerHTML = "Отсортировать ДЗ"
-//             Object.assign(updateButt.style, {
-//                 position: "relative",
-//                 right: "15px",
-//                 margin: "20px 0 -60px 0",
-//                 width: "200px",
-//                 height: "49.51px",
-//                 backgroundColor: "white",
-//                 borderRadius: "25px",
-//                 outline: "0",
-//                 border: "1px solid #e5ebf2",
-//             });
-//             nawRow.appendChild(updateButt);
-//             updateButt.addEventListener('mouseover', () => {
-//                 updateButt.style.filter = 'opacity(80%)';
-//                 updateButt.style.cursor = "pointer";
-//             });
-//             updateButt.addEventListener('mouseout', () => {
-//                 updateButt.style.filter = 'opacity(100%)';
-//                 updateButt.style.cursor = "unset";
-//             });
-//             updateButt.addEventListener("click", sortByDate);
-//         }, 1500);
-//     }
-// }
-//
-// window.navigation.addEventListener("navigate", () => {
-//     hwFix();
-// });
