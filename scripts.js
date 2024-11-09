@@ -20,8 +20,7 @@ function nameFix() {
     for (var key in dick) {
         if (win.includes(key)) {
             document.title = "Journal - " + dick[key];
-            //document.title = "DogKal - " + dick[key];
-        }
+        } 
     }
 }
 
@@ -172,21 +171,21 @@ function buttonCreate() {
 setTimeout(buttonCreate, 500);
 
 // revealing all current homework by pressing "show more"
-function revealHW() {
+function revealHW(HWelement) {
 	if (document.URL.startsWith("https://journal.top-academy.ru/ru/main/homework/page/index") ||
     document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
-	    if(document.body.contains(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"))) {
-	        document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)").querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > p.text-center > span").click();
+	    if(document.body.contains(HWelement)) {
+	        HWelement.querySelector("p.text-center > span").click();
 	    }
     }
 }
 
 // sort by exp. date function, then call a function
-function sortByDate() {
+function sortByDate(HWelement) {
 	if (document.URL.startsWith("https://journal.top-academy.ru/ru/main/homework/page/index") ||
 	document.URL == "https://journal.top-academy.ru/ru/main/homework/page/index") {
 	    var barabama = [];
-	    var doglet = document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4) > div");
+	    var doglet = HWelement.querySelector("div");
         let sons = doglet.querySelectorAll(".homework-item");
 	    sons.forEach(son => {
             let dogs = son.querySelectorAll(".item-footer");
@@ -267,6 +266,8 @@ function addCustomCSS() {
 
 // shit code, don't care
 setInterval(nameFix, 350);
-setInterval(revealHW, 350);
-setInterval(sortByDate, 350);
+setInterval(function(){revealHW(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(1)"))}, 350);
+setInterval(function(){sortByDate(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(1)"))}, 350);
+setInterval(function(){revealHW(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"))}, 350);
+setInterval(function(){sortByDate(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"))}, 350);
 setInterval(addCustomCSS, 350);

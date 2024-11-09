@@ -186,13 +186,37 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 }
 
 .mystat-img {
-    margin-left: 25px !important;
-    content: url("https://i.imgur.com/tLiVqUd.gif");
-    border-radius: 15px;
-    width: 70%;
-    height: 40%;
+    margin-left: 45px !important;
+    content: url("https://i.imgur.com/sohTE8N.png");
+    border-radius: unset;
+    width: 45%;
+    height: auto;
 }
 
+.sidebar-parent-block .sidebar.active .sidebar-header {
+	padding-bottom: 7px;
+}
+
+.sidebar-parent-block .sidebar ul.sidebar-nav {
+	margin-top: 16px !important;
+}
+
+.sidebar-parent-block .sidebar .sidebar-header {
+	height: unset;	
+}
+
+.sidebar-parent-block .sidebar ul.sidebar-nav li a {
+	padding: unset;
+	margin-bottom: 22.5px;
+}
+
+.sidebar-parent-block .sidebar ul.sidebar-nav li .side-text {
+	position: relative;
+    top: 3px;
+    left: -5px;	
+    text-shadow: unset !important;
+    filter: unset !important;
+}
 .schedule-section .item .content-schedule .day-holder .is-today {
     border: unset;
     filter: drop-shadow(0 0 3px #ff004c);    
