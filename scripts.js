@@ -264,6 +264,55 @@ function addCustomCSS() {
     }
 } 
 
+// schedule pair start text addition
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+    const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+    const day = date.getDate();
+    const month = months[date.getMonth()]; 
+    const dayOfWeek = daysOfWeek[date.getDay()];
+    return `${day} ${month}, ${dayOfWeek}`;
+}
+
+function scheduleDog() {
+	if (document.URL.startsWith("https://journal.top-academy.ru/ru/main/schedule/page/index") ||
+    document.URL == "https://journal.top-academy.ru/ru/main/schedule/page/index") {
+	    if(document.body.contains(document.querySelector(".modal-content"))) {
+	    	if(document.body.contains(document.querySelector(".timeToCome"))) { return }
+			let scheduleModal = document.querySelector(".modal-content");
+			scheduleModal.style.padding = "40px 0 10px 0";
+			scheduleModal.parentNode.style.maxWidth = "40%"; 
+			let timeToCome = scheduleModal.querySelector(".time").innerText.split(" ")[0]
+			
+			scheduleModal.querySelectorAll(".time").forEach(element => {
+				element.style.color = "#566DBB";
+				element.style.fontWeight = "bold";
+			});
+			
+			scheduleModal.querySelector(".on-hover").style.boxShadow = "unset";
+			
+			let modalHeader = scheduleModal.querySelector('.modal-header');
+			modalHeader.style.padding = "unset";
+			
+			let modalTitle = modalHeader.querySelector(".modal-title")
+			let modalDate = new Date(modalTitle.innerText)
+			modalTitle.innerText = formatDate(modalDate);
+			
+			let TTCElement = document.createElement('div');
+			TTCElement.className = 'timeToCome';
+			TTCElement.textContent = `Начало каторги: ${timeToCome}`;
+			
+			TTCElement.style.color = "red"
+			TTCElement.style.fontSize = "25px";
+			TTCElement.style.fontWeight = "bold";
+			TTCElement.style.margin = "0 0 10px 0";
+			
+			modalHeader.parentNode.insertBefore(TTCElement, modalHeader.nextSibling);
+	    }
+    }
+}
+
 // shit code, don't care
 setInterval(nameFix, 350);
 setInterval(function(){revealHW(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(1)"))}, 350);
@@ -271,3 +320,4 @@ setInterval(function(){sortByDate(document.querySelector("body > mystat > ng-com
 setInterval(function(){revealHW(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"))}, 350);
 setInterval(function(){sortByDate(document.querySelector("body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.items-homework > hw-item:nth-child(4)"))}, 350);
 setInterval(addCustomCSS, 350);
+setInterval(scheduleDog, 350);
