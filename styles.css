@@ -10,13 +10,13 @@ body {
 }
 
 .homepage-wrapper .rating-blocks .ratings .inner.rating-details,
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(5){
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(5):has(.payments-content) {
 	display: none;
 }
 
 .homepage-wrapper .rating-blocks .ratings,
 .homepage-wrapper .rating-blocks .ratings .inner,
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(3) > div > div,
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(3) > div > div:has(.homeworks-content),
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(3) > div > div > div {
     height: 100%;
 }
@@ -156,7 +156,7 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 }
 
 .wrap-counts {
-    padding-left: unset;
+    padding: 0px 10px;
     background-color: unset;
 }
 
@@ -171,7 +171,7 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 
 .sidebar-parent-block .sidebar { 
     filter: drop-shadow(0px 0px 6px #000);
-    background: rgba(255, 255, 255, .36)    
+    /* background: rgba(255, 255, 255, .36)     */
 }
 
 .pos-f-t .right-block .dropdown-langs .dropdown-item {
@@ -185,12 +185,25 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
     background-color: var(--aka-text-color) !important;;
 }
 
+.sidebar-parent-block .sidebar.active .sidebar-header .arrow-navigation,
+.sidebar-parent-block .sidebar .sidebar-header .arrow-navigation {
+	display: none;	
+}
+
+.sidebar-parent-block .sidebar.active ul.sidebar-nav li {
+    line-height: 20px
+}
+
 .mystat-img {
-    margin-left: 45px !important;
+    /* margin-left: 45px !important; */
     content: url("https://i.imgur.com/sohTE8N.png");
     border-radius: unset;
     width: 45%;
     height: auto;
+}
+
+.sidebar-parent-block .sidebar {
+	transition: all .3s;
 }
 
 .sidebar-parent-block .sidebar.active .sidebar-header {
@@ -202,12 +215,12 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 }
 
 .sidebar-parent-block .sidebar .sidebar-header {
-	height: unset;	
+	height: 80.98px;	
 }
 
 .sidebar-parent-block .sidebar ul.sidebar-nav li a {
 	padding: unset;
-	margin-bottom: 22.5px;
+	margin-bottom: 21.5px;
 }
 
 .sidebar-parent-block .sidebar ul.sidebar-nav li .side-text {
@@ -219,6 +232,7 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 }
 .schedule-section .item .content-schedule .day-holder .is-today {
     border: unset;
+    background-color: #ff1900d1 !important;
     filter: drop-shadow(0 0 3px #ff004c);    
 }
 
@@ -252,4 +266,16 @@ ng-component > div > div.items-homework > hw-item:nth-child(3) {
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 ng-component > div > div.items-homework > hw-item:nth-child(2) {
     order: 4 !important;
+}
+
+.homeworks-navigation .ng-select .ng-dropdown-panel {
+	width: 150%;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items {
+	max-height: 500px;
+}
+
+.text-homework-wrap .center .content {
+	background-color: unset;
 }
