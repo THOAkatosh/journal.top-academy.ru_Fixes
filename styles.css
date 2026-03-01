@@ -279,3 +279,7 @@ ng-component > div > div.items-homework > hw-item:nth-child(2) {
 .text-homework-wrap .center .content {
 	background-color: unset;
 }
+
+.header-contacts {
+	display: none;
+}
