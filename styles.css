@@ -152,7 +152,7 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 	margin-left: unset;
 	flex-direction: row-reverse;
 }
-.tooltip.show {
+.tooltip.show:not(bs-tooltip-container) {
 	right: unset;
 	left: 270px !important;
     top: 46px !important;
@@ -258,6 +258,12 @@ ng-component > div > div.items-homework > hw-item:nth-child(2) {
 }
 
 
+/* homework modal styles */
+.modal-sm .modal-content {
+    align-items: center;
+}
+
+
 /* subject dropdown styles */
 .homeworks-navigation .ng-select .ng-dropdown-panel {
 	width: 150%;
@@ -265,14 +271,23 @@ ng-component > div > div.items-homework > hw-item:nth-child(2) {
 .ng-dropdown-panel .ng-dropdown-panel-items {
 	max-height: 500px;
 }
+bs-tooltip-container {
+	top: 266px !important;
+    border-radius: 7px !important;
+}
+.homeworks-section .items-homework .item-container .item .item-header .info-comment {
+	top: 60% !important;
+	left: 25% !important;
+}
+.homeworks-section .items-homework .item-container .item .item-header .info-content {
+	top: 7px !important;
+	left: 92% !important;
+}
 
 
 /* idk what is that shit below */
 .text-homework-wrap .center .content {
 	background-color: unset;
-}
-bs-tooltip-container {
-    border-radius: 7px !important;
 }
 .item-image {
     display: flex;

@@ -24,7 +24,7 @@ function nameFix() {
     }
 }
 
-// funnyes button
+// funnies button
 function buttonCreate() {
 	const container = document.createElement("div");
 		container.style.position = "fixed";
@@ -33,7 +33,7 @@ function buttonCreate() {
 		container.style.zIndex = "3000";
 	 
 	const toggleButton = document.createElement("button");
-		toggleButton.textContent = "Funnyes";
+		toggleButton.textContent = "Funnies";
 		toggleButton.style.padding = "10px 10px";
 		toggleButton.style.fontSize = "16px";
 		toggleButton.style.cursor = "pointer";
