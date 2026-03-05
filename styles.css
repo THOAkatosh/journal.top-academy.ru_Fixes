@@ -68,6 +68,9 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 .homeworks-section .items-homework .item-container .item, .homeworks-section .items-homework .item-container .item .item-header {
     border-radius: 8px;
 }
+.homeworks-section .items-homework .item-container .item .item-header .name-spec {
+	width: 70%;
+}
 
 
 /* sidebar styles */
