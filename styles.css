@@ -1,5 +1,3 @@
-/* i don't want to comment all this shit, sorry */
-
 :root {
     --aka-text-color: #55e0ff; 
     --aka-text-font: "Minecraft Rus";
@@ -9,18 +7,21 @@ body {
 	background-color: #9ac9c0;
 }
 
+
+/* remove payment info block from the homepage */
 .homepage-wrapper .rating-blocks .ratings .inner.rating-details,
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(5):has(.payments-content) {
 	display: none;
 }
 
+
+/* fix rating block sizing on main page */
 .homepage-wrapper .rating-blocks .ratings,
 .homepage-wrapper .rating-blocks .ratings .inner,
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(3) > div > div:has(.homeworks-content),
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(3) > div > div > div {
     height: 100%;
 }
-
 .homepage-wrapper .inner .part-rating .rating-content {
 	position: absolute;
     width: 100%;
@@ -30,7 +31,13 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
     display: flex;
     align-items: center;
 }
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > leader-component > div > div > div.col-md-6.rating-blocks.block-item > div > div.inner.with-bg,
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > leader-component > div > div > div.col-md-6.rating-blocks.block-item > div > div.inner.rating-details {
+    max-width: unset;
+}
 
+
+/* main page homowork block fix */
 body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > div:nth-child(3) > div > div > div > div.homeworks-content {
 	position: absolute;
     width: 100%;
@@ -42,90 +49,96 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
     top: 0;
     left: 0;
 }
-
 .homepage-wrapper .part-homeworks .homeworks-content .count-header {
 	margin-top: 45px;
 }
 
+
+/* left menu selected underscore remove */
 .active {
     border: none !important;
 }
 
-bs-tooltip-container {
-    border-radius: 7px !important;
-}
 
-.homeworks-section .item-homework .item-container .item .item-footer {
+/* padding for hw block footers */
+.homeworks-section .items-homework .item-container .item .item-footer {
     padding: 3px 17px 5px 17px;
 }
 
-.homeworks-section .item-homework .item-container .item .item-image img {
-    width: 91%;
-    height: 95%;
-    object-fit: unset;
-    border-radius: 10px;
-}
 
-.item-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.homeworks-section .item-homework .item-container .item, .homeworks-section .item-homework .item-container .item .item-header {
+/* round borders for hw blocks */
+.homeworks-section .items-homework .item-container .item, .homeworks-section .items-homework .item-container .item .item-header {
     border-radius: 8px;
 }
-
-.homeworks-section .item-homework .item-container .item.status1 .item-footer, .homeworks-section .item-homework .item-container .item.status2 .item-footer {
+.homeworks-section .items-homework .item-container .item.status3 .item-footer {
     border-radius: 0 0 8px 8px;
-    text-shadow: 0px 0px 4px #000;
-    filter: drop-shadow(0px 0px 4px #5a5a5a);
 }
 
-.only-profile-overlay {
-    display: none;
-}
 
-.button.malachite {
-    display: none;
+/* sidebar styles */
+.sidebar-parent-block .sidebar ul.sidebar-nav li:hover {
+    background: unset;
+    box-shadow: unset;  
 }
-.content {
-    background-color: #9ac9c0;
-}
-
-#dropZone > div {
-    background-color: unset;    
-}
-
 .sidebar-parent-block .sidebar ul.sidebar-nav li a .badge-counter {
-    right: -15px;
     top: 3px !important;
     width: 30px !important;
     border-radius: 2px !important;    
 }
-
-.homeworks-section .item-homework .item-container .item.status3 .item-footer {
-    border-radius: 0 0 8px 8px;
+.sidebar-parent-block .sidebar { 
+    filter: drop-shadow(0px 0px 6px #000);
+}
+.sidebar-parent-block .sidebar.active .sidebar-header .arrow-navigation,
+.sidebar-parent-block .sidebar .sidebar-header .arrow-navigation {
+	display: none;	
+}
+.sidebar-parent-block .sidebar.active ul.sidebar-nav li {
+    line-height: 20px
+}
+.mystat-img {
+    content: url("https://i.imgur.com/sohTE8N.png");
+    border-radius: unset;
+    width: 45%;
+    height: auto;
+}
+.sidebar-parent-block .sidebar {
+	transition: all .3s;
+}
+.sidebar-parent-block .sidebar.active .sidebar-header {
+	padding-bottom: 7px;
+}
+.sidebar-parent-block .sidebar ul.sidebar-nav {
+	margin-top: 16px !important;
+}
+.sidebar-parent-block .sidebar .sidebar-header {
+	height: 80.98px;	
+}
+.sidebar-parent-block .sidebar ul.sidebar-nav li a {
+	padding: unset;
+	margin-bottom: 21.5px;
+}
+.sidebar-parent-block .sidebar ul.sidebar-nav li .side-text {
+	position: relative;
+    top: 3px;
+    left: -5px;	
+    text-shadow: unset !important;
+    filter: unset !important;
 }
 
+
+/* navbar styles */
 .navbar {
     background: transparent !important;
     background-color: #586e8b !important;
     color: black !important;
 }
-
 .avatar {
+	width: 60px;
+	height: 60px;
     filter: drop-shadow(0px 0px 3px #444);
     border-radius: 11px;
 }
-
-.toast-top-right {
-    transform: scale(0.8);
-    top: unset;
-    bottom: 12px !important;
-}
-
-.fio-stud {
+.top-panel__profile-name:not(:has([style="overflow: hidden;"])) {
     color: var(--aka-text-color) !important;
     font-family: var(--aka-text-font);
     font-size: 16px;
@@ -134,7 +147,61 @@ bs-tooltip-container {
     text-shadow: 0px 0px 4px #000;
     filter: drop-shadow(0px 0px 4px #5a5a5a);
 }
+.top-panel__left-block {
+	display: none;
+}
+.top-panel__right-block {
+	margin-left: unset;
+	flex-direction: row-reverse;
+}
+.tooltip.show {
+	right: unset;
+	left: 270px !important;
+    top: 46px !important;
+    padding: 5px !important;
+}
+.tooltip .arrow {
+	display: none;
+}
+.panel-tooltip {
+	gap: unset;
+	padding: unset;
+}
+.dropdown-toggle::after {
+	display: none;
+}
+.dropdown-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	padding: 5px 10px 5px 5px;
+}
+.dropdown-item:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    background-color: unset;
+}
+.dropdown-item.active, .dropdown-item:active {
+	background-color: unset;
+	color: unset;
+}
+.dropdown-menu {
+	left: -17px !important;
+	min-width: 60px;
+}
+li[role="menuitem"] > a {
+	padding: 5px;
+}
 
+
+/* removce social icon and contacts form header*/
+.top-panel__social, .top-panel__contacts {
+	display: none;
+}
+
+
+/* setting text colors */
 .title-text, .title-block, p.title, .col-3, .active-counter, .color-check, body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > p:nth-child(1), body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > p.title-signal.text-uppercase.font-weight-bold.second, body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div.header, .side-text, .show-more, .select-univercity, .my-tooltip, body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.homeworks-navigation.row > div.col-5.next-page > span.float-right.library-quiz, body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div.homeworks-navigation.row > div.col-5.next-page > span:nth-child(2) {
     color: var(--aka-text-color) !important;
     font-weight: bold;
@@ -142,11 +209,8 @@ bs-tooltip-container {
     filter: drop-shadow(0px 0px 4px #5a5a5a);
 }
 
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > leader-component > div > div > div.col-md-6.rating-blocks.block-item > div > div.inner.with-bg,
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > ng-component > div > div > leader-component > div > div > div.col-md-6.rating-blocks.block-item > div > div.inner.rating-details {
-    max-width: unset;
-}
 
+/* currency styles */
 #all-christal > span, #all-coin > span {
     position: relative;
     color: var(--aka-text-color) !important;
@@ -154,132 +218,95 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
     text-shadow: 0px 0px 4px #000;
     filter: drop-shadow(0px 0px 4px #5a5a5a);
 }
-
 .wrap-counts {
     padding: 0px 10px;
     background-color: unset;
 }
 
-.sidebar-parent-block .sidebar ul.sidebar-nav li:hover {
-    background: unset;
-    box-shadow: unset;  
-}
 
+/* remove border from show more button */
 .show-more {
     border-bottom: unset !important;
 }
 
-.sidebar-parent-block .sidebar { 
-    filter: drop-shadow(0px 0px 6px #000);
-    /* background: rgba(255, 255, 255, .36)     */
+
+/* highlight today in schedule */
+.schedule-section .item .content-schedule .day-holder .is-today {
+    border: unset;
+    background-color: #ff1900d1 !important;
+    filter: drop-shadow(0 0 3px #ff004c);    
+}
+.schedule-section .item .content-schedule .day-holder .is-today .active-day {
+    background: #ff1900d1 !important;
 }
 
+
+/* homework types order */
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
+ng-component > div > div.items-homework > hw-item:nth-child(1) {
+    order: 1 !important; /* expired */
+}
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
+ng-component > div > div.items-homework > hw-item:nth-child(4) {
+    order: 2 !important; /* current */
+}
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
+ng-component > div > div.items-homework > hw-item:nth-child(3) {
+    order: 3 !important; /* on verification */
+}
+body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
+ng-component > div > div.items-homework > hw-item:nth-child(2) {
+    order: 4 !important; /* verificated */
+}
+
+
+/* subject dropdown styles */
+.homeworks-navigation .ng-select .ng-dropdown-panel {
+	width: 150%;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items {
+	max-height: 500px;
+}
+
+
+/* idk what is that shit below */
+.text-homework-wrap .center .content {
+	background-color: unset;
+}
+bs-tooltip-container {
+    border-radius: 7px !important;
+}
+.item-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.only-profile-overlay {
+    display: none;
+}
+.button.malachite {
+    display: none;
+}
+.content {
+    background-color: #9ac9c0;
+}
+#dropZone > div {
+    background-color: unset;    
+}
+.toast-top-right {
+    transform: scale(0.8);
+    top: unset;
+    bottom: 12px !important;
+}
 .pos-f-t .right-block .dropdown-langs .dropdown-item {
     color: var(--aka-text-color) !important;
     font-weight: bold;
     text-shadow: 0px 0px 4px #000;
     filter: drop-shadow(0px 0px 4px #5a5a5a);
 }
-
 .img-logout-block {
-    background-color: var(--aka-text-color) !important;;
+    background-color: var(--aka-text-color) !important;
 }
-
-.sidebar-parent-block .sidebar.active .sidebar-header .arrow-navigation,
-.sidebar-parent-block .sidebar .sidebar-header .arrow-navigation {
-	display: none;	
-}
-
-.sidebar-parent-block .sidebar.active ul.sidebar-nav li {
-    line-height: 20px
-}
-
-.mystat-img {
-    /* margin-left: 45px !important; */
-    content: url("https://i.imgur.com/sohTE8N.png");
-    border-radius: unset;
-    width: 45%;
-    height: auto;
-}
-
-.sidebar-parent-block .sidebar {
-	transition: all .3s;
-}
-
-.sidebar-parent-block .sidebar.active .sidebar-header {
-	padding-bottom: 7px;
-}
-
-.sidebar-parent-block .sidebar ul.sidebar-nav {
-	margin-top: 16px !important;
-}
-
-.sidebar-parent-block .sidebar .sidebar-header {
-	height: 80.98px;	
-}
-
-.sidebar-parent-block .sidebar ul.sidebar-nav li a {
-	padding: unset;
-	margin-bottom: 21.5px;
-}
-
-.sidebar-parent-block .sidebar ul.sidebar-nav li .side-text {
-	position: relative;
-    top: 3px;
-    left: -5px;	
-    text-shadow: unset !important;
-    filter: unset !important;
-}
-.schedule-section .item .content-schedule .day-holder .is-today {
-    border: unset;
-    background-color: #ff1900d1 !important;
-    filter: drop-shadow(0 0 3px #ff004c);    
-}
-
-.schedule-section .item .content-schedule .day-holder .is-today .active-day {
-    background: #ff1900d1 !important;
-}
-
 .justify-content-between .left-block .user-full-name .profile-link {
     max-width: unset !important;
-}
-
-/* expired */
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
-ng-component > div > div.items-homework > hw-item:nth-child(1) {
-    order: 1 !important;
-}
-
-/* current */
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
-ng-component > div > div.items-homework > hw-item:nth-child(4) {
-    order: 2 !important;
-}
-
-/* on verification */
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
-ng-component > div > div.items-homework > hw-item:nth-child(3) {
-    order: 3 !important;
-}
-
-/* verificated */
-body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
-ng-component > div > div.items-homework > hw-item:nth-child(2) {
-    order: 4 !important;
-}
-
-.homeworks-navigation .ng-select .ng-dropdown-panel {
-	width: 150%;
-}
-
-.ng-dropdown-panel .ng-dropdown-panel-items {
-	max-height: 500px;
-}
-
-.text-homework-wrap .center .content {
-	background-color: unset;
-}
-
-.header-contacts {
-	display: none;
 }
