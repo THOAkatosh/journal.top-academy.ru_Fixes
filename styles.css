@@ -280,10 +280,12 @@ bs-tooltip-container {
 	left: 25% !important;
 }
 .homeworks-section .items-homework .item-container .item .item-header .info-content {
-	top: 7px !important;
+	top: auto !important;
 	left: 92% !important;
 }
-
+.homeworks-section .items-homework .item-container .item .item-header .name-spec .all-name-spec {
+	top: 65% !important;
+}
 
 /* idk what is that shit below */
 .text-homework-wrap .center .content {
