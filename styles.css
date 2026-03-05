@@ -60,18 +60,13 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 }
 
 
-/* padding for hw block footers */
+/* hw block styles */
 .homeworks-section .items-homework .item-container .item .item-footer {
+	border-radius: 0 0 8px 8px;
     padding: 3px 17px 5px 17px;
 }
-
-
-/* round borders for hw blocks */
 .homeworks-section .items-homework .item-container .item, .homeworks-section .items-homework .item-container .item .item-header {
     border-radius: 8px;
-}
-.homeworks-section .items-homework .item-container .item.status3 .item-footer {
-    border-radius: 0 0 8px 8px;
 }
 
 
