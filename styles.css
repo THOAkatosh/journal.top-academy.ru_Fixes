@@ -152,11 +152,15 @@ body > mystat > ng-component > ng-component > div > div.content > div.wrapper > 
 	margin-left: unset;
 	flex-direction: row-reverse;
 }
-.tooltip.show:not(bs-tooltip-container) {
+bs-tooltip-container.counts-tooltip--width500 {
 	right: unset;
 	left: 270px !important;
     top: 46px !important;
     padding: 5px !important;
+    border-radius: 10px;
+}
+.counts-tooltip {
+	border-radius: 10px;
 }
 .tooltip .arrow {
 	display: none;
@@ -271,7 +275,7 @@ ng-component > div > div.items-homework > hw-item:nth-child(2) {
 .ng-dropdown-panel .ng-dropdown-panel-items {
 	max-height: 500px;
 }
-bs-tooltip-container {
+.filename-tooltip {
 	top: 266px !important;
     border-radius: 7px !important;
 }
@@ -286,6 +290,7 @@ bs-tooltip-container {
 .homeworks-section .items-homework .item-container .item .item-header .name-spec .all-name-spec {
 	top: 65% !important;
 }
+
 
 /* idk what is that shit below */
 .text-homework-wrap .center .content {
