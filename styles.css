@@ -195,6 +195,9 @@ bs-tooltip-container.counts-tooltip--width500 {
 li[role="menuitem"] > a {
 	padding: 5px;
 }
+.top-panel__my-class {
+	display: none;
+}
 
 
 /* removce social icon and contacts form header*/
