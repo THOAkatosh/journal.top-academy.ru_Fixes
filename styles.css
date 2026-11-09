@@ -294,6 +294,10 @@ ng-component > div > div.items-homework > hw-item:nth-child(2) {
 	top: 65% !important;
 }
 
+/* login shit remove */
+.login-stories {
+	display: none !important;
+}
 
 /* idk what is that shit below */
 .text-homework-wrap .center .content {
